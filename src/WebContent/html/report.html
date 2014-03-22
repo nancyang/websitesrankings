@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	    <title>Top 5 Websites Rankings</title>
+	    <link rel="stylesheet" type="text/css" href="../javascript/jquery-easyui-1.3.5/themes/default/easyui.css">
+	    <link rel="stylesheet" type="text/css" href="../javascript/jquery-easyui-1.3.5/themes/icon.css">
+	    <link rel="stylesheet" type="text/css" href="../javascript/jquery.jqplot.1.0.8r1250/jquery.jqplot.css" />
+	    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+	    <script type="text/javascript" src="../javascript/jquery-easyui-1.3.5/jquery.min.js"></script>
+	    <script type="text/javascript" src="../javascript/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
+		<!--[if lt IE 9]><script type="text/javascript" src="../javascript/jquery.jqplot.1.0.8r1250/excanvas.js"></script><![endif]-->
+		<script type="text/javascript" src="../javascript/jquery.jqplot.1.0.8r1250/jquery.jqplot.min.js"></script>
+	    <script type="text/javascript" src="../javascript/jquery.jqplot.1.0.8r1250/plugins/jqplot.barRenderer.min.js"></script>
+	    <script type="text/javascript" src="../javascript/jquery.jqplot.1.0.8r1250/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+		<script type="text/javascript" src="../javascript/jquery.jqplot.1.0.8r1250/plugins/jqplot.pointLabels.min.js"></script>
+		<script type="text/javascript" src="../javascript/jquery.jqplot.1.0.8r1250/plugins/jqplot.canvasTextRenderer.min.js"></script>
+		<script type="text/javascript" src="../javascript/jquery.jqplot.1.0.8r1250/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+		<script type="text/javascript" src="../javascript/main.js"></script>
+  	</head>
+  	<body>
+  		<fieldset>
+  			<legend>Render Report By:</legend>
+  			<div>
+  				<input type="radio" name="criteria" id="rd1" value="date">Date
+  				<div class="criteria-div" id="div-rd1"><input class="easyui-datebox" id="date"></input></div>
+			</div>
+			<div class="clear"></div>
+			<div>
+				<input type="radio" name="criteria" id="rd2" value="daterange">From Date
+				<div class="criteria-div" id="div-rd2">
+					<input class="easyui-datebox" id="fromdate"> To Date
+					<input class="easyui-datebox" id="todate">
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div>
+				<input type="radio" name="criteria" id="rd3" value="website">Website
+				<div class="criteria-div" id="div-rd3">
+					<select id="website" size="5" ></select>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="submit-div" align="center">
+				<input type="submit"  id="submitBtn" value="Submit..."></input>
+			</div>
+  		</fieldset>
+  		<div class="report-div">
+  		</div>
+  	<script type="text/javascript">
+	  	$('document').ready(
+            function(){
+            	// render websites list
+            	getWebsitesList();
+            	// click event
+            	radioBtnClickEvent();
+            	submitBtnClickEvent();
+             	// default selected radio button
+            	$('#rd1').click();
+         	}
+		 );
+	</script>
+  	</body>
+</html>
